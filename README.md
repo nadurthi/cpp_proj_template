@@ -1,2 +1,1 @@
-# UQ_cpp
-c++ library for Uncertainty Quantification
+# cpp project template with cmake
