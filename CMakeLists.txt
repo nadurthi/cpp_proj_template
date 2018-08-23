@@ -33,16 +33,14 @@ set(HEADER_BASE "${CMAKE_CURRENT_SOURCE_DIR}/include")
 find_package (Threads)
 
 find_package (Boost)
-
-# find_package (UQ PATHS "/usr/local/" "/usr/local/lib" "/usr/local/include/" "/usr/local/include/UQ")
+# 
 find_library(UQ
     NAMES UQ libUQ
-    # HINTS "${CMAKE_PREFIX_PATH}/curl/lib"
 )
 
 # find_package(Eigen3 REQUIRED)
 # find_package(spdlog REQUIRED)
-
+# 
 #-------------------------------------------------------------------------------------------
 # Sub-projects
 #-------------------------------------------------------------------------------------------
@@ -71,7 +69,8 @@ endif()
 file(GLOB myproject_SOURCES "src/*.cpp" "include/myproject/*.h")
 add_library(myproject ${myproject_SOURCES})
 include_directories("include")
-target_link_libraries(myproject UQ ${CMAKE_THREAD_LIBS_INIT} ${Boost_LIBRARIES})
+target_link_libraries(myproject ${CMAKE_THREAD_LIBS_INIT} ${Boost_LIBRARIES})
+# target_link_libraries(myproject ${CMAKE_THREAD_LIBS_INIT} ${Boost_LIBRARIES})
 
 
 #-------------------------------------------------------------------------------------------
